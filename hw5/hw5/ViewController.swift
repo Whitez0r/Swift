@@ -41,8 +41,12 @@ class ViewController: UIViewController {
         print(countryDictionary)
         
         //3) Создать массив интересных фактов в формате (“название города/страны: факт”), отсортировав их по длине строки по убыванию.
-        let interestingFactsArray = ["Capetown: Сapital of South Africa", "Moscow: Financial center of Russia", "Minsk: Сapital of Belarus", "Beijing: Сapital of China"]
-        print(interestingFactsArray.sorted(by: { $0 > $1 }))
+        let interestingFactsArray = ["Capetown: Сapital of South Africa", "Moscow: Financial center of Russia", "Minsk: Сapital of Belarus", "Beijing: China"]
+        print(interestingFactsArray.sorted(by: { $0.count < $1.count } ))
+        //Beijing: Сapital of China
+        //Capetown: Сapital of South Africa
+        //Minsk: Сapital of Belarus
+        //Moscow: Financial center of Russia
         
         //4) * Отсортировать страны/города по континенту. Отсортированные данные должны лежать в одном объекте (сами придумайте, в каком). В итоге, у вас должна быть возможность получить все страны/города переданному континенту.
         var continent: [String: String]
