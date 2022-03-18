@@ -39,7 +39,9 @@ class ViewController: UIViewController {
                 sortedCityDictionary[key] = value
             }
         }
-        
+        //2 Второй вариант
+        let filterData = cityDictionary.filter({ $0.key.count > 6 })
+        print(filterData)
         print(sortedCityDictionary)
         
         //3) Создать массив интересных фактов в формате (“название города/страны: факт”), отсортировав их по длине строки по убыванию.
@@ -49,14 +51,20 @@ class ViewController: UIViewController {
         }
         print(interestingFactsArray.sorted(by: { $0.count < $1.count } ))
         
+        // map
+        let facts = cityDictionary.map({ "\($0.key): \($0.value.interestingFact)" })
+        print(facts)
+        
         //4) * Отсортировать страны/города по континенту. Отсортированные данные должны лежать в одном объекте (сами придумайте, в каком). В итоге, у вас должна быть возможность получить все страны/города переданному континенту.
-        var continent: [String: String] = [:]
+        var continent = [String: [String]]()
 
-        for (key, value) in cityDictionary {
-            continent[value.continent] = "\(key)"
+        for element in cityDictionary {
+            continent[element.value.continent, default: []] += [element.key]
         }
-        // Не понял как получить все страны 🥺🥺
         print(continent)
+        
+        let reduceContinints = cityDictionary.reduce(into: [String: [String]]()) { $0[$1.value.continent, default: []] += [$1.key] }
+        reduceContinints["Africa"]
         
         //Дан массив проверить, есть ли в массиве дубликаты.
         let myArray = [1, 2, 3, 4, 5, 6, 6]
@@ -66,6 +74,18 @@ class ViewController: UIViewController {
         else {
             print("Дубликотов нет")
         }
+       
+        //Find duplicated
+        var numbersDictionary = [Int: Int]()
+        for element in myArray {
+            numbersDictionary[element, default: 0] += 1
+        }
+        print(numbersDictionary)
+        
+        let duplicatedNumbers = numbersDictionary.filter { $0.value > 1 }.map({ $0.key })
+        
+        // short
+//        myArray.reduce(into: <#T##Result#>, <#T##updateAccumulatingResult: (inout Result, Int) throws -> ()##(inout Result, Int) throws -> ()##(_ partialResult: inout Result, Int) throws -> ()#>)
     }
 }
 
