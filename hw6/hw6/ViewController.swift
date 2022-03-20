@@ -14,20 +14,17 @@ class ViewController: UIViewController {
         //  1) Дан массив целых чисел. Разделите его на два массива, где в первом массиве будут лежать четные числа, а во втором - нечетные.
         
         let intArray = [2, 3, 4, 5, 6, 7, 8, 9, 10]
-        var evenArray = [Int]()
-        var unevenArray = [Int]()
-        
-        evenArray = intArray.filter({ $0 % 2 == 0 })
-        unevenArray = intArray.filter({ $0 % 2 != 0 })
+        var evenArray = intArray.filter({ $0 % 2 == 0 })
+        var unevenArray = intArray.filter({ $0 % 2 != 0 })
         
         print(evenArray)
         print(unevenArray)
         
         // second option
-        
+
         evenArray = []
         unevenArray = []
-        
+
         for element in intArray {
             if element % 2 == 0 {
                 evenArray.append(element)
@@ -36,7 +33,7 @@ class ViewController: UIViewController {
                 unevenArray.append(element)
             }
         }
-        
+
         print(evenArray)
         print(unevenArray)
         
@@ -52,14 +49,15 @@ class ViewController: UIViewController {
         print(multiply(3, nil))
         print(myPow(3, 5))
         print(myPow(3, nil))
-        print(subtraction(3, 5))
-        print(subtraction(3, nil))
-        print(division(3, 5))
-        print(division(3, nil))
+        print(subtract(3, 5))
+        print(subtract(3, nil))
+        print(devide(3, 5))
+        print(devide(3, nil))
         
         // 4) * Создайте функцию, которая проверяет является ли переданная строка палиндромом. Строка может быть как одним словом (mom) так и предложением (Too bad I hid a boot). В предложении вы должны игнорировать пробелы, большие или маленькие это буквы и знаки препинания при определении полиндрома.
         
-        print(polyndrom("Too bad I hid a boot"))
+        print(checkPolyndrom("Too bad I hid a boot!"))
+        print(checkPolyndrom("Too, bad, I, hid, a,-?: boot!"))
    }
 
     func add(_ firstNumber: Int?, to secondNumber: Int?) -> String {
@@ -86,15 +84,11 @@ class ViewController: UIViewController {
         return String(pow(Double(firstNumber), Double(secondNumber)))
     }
     
-    func subtraction(_ firstNumber: Int?, _ secondNumber: Int?) -> String {
-        guard let firstNumber = firstNumber,
-              let secondNumber = secondNumber else {
-            return "Одно из значений не число"
-        }
-        return String(firstNumber - secondNumber)
+    func subtract(_ firstNumber: Int?, _ secondNumber: Int?) -> String {
+        String((firstNumber ?? 0) - (secondNumber ?? 0))
     }
     
-    func division(_ firstNumber: Double?, _ secondNumber: Double?) -> String {
+    func devide(_ firstNumber: Double?, _ secondNumber: Double?) -> String {
         guard let firstNumber = firstNumber,
               let secondNumber = secondNumber else {
             return "Одно из значений не число"
@@ -107,7 +101,7 @@ class ViewController: UIViewController {
 
         for element in stringArray {
             guard let element = element else {
-                return ["E"]
+                return [Character]()
             }
 
             for char in element {
@@ -126,23 +120,22 @@ class ViewController: UIViewController {
         print(result)
     }
     
-    func polyndrom(_ polyndromString: String?) -> String {
+    func checkPolyndrom(_ polyndromString: String?) -> String {
         guard let polyndromString = polyndromString else {
             return "Введите строку"
         }
-        let lowerWithoutWhitespacesString = polyndromString.filter{!$0.isWhitespace}.lowercased()
+        let charactersToRemove = Set(Array(".:?,-!"))
+        let lowerWithoutWhitespacesString = polyndromString.filter{ !$0.isWhitespace }.lowercased().reduce("") { let str = String($1); return $0 + (charactersToRemove.contains($1) ? "" : str) }
         var reverceString = String()
         
         for element in lowerWithoutWhitespacesString {
             reverceString.insert(element, at: reverceString.startIndex)
         }
-        
+                
         if lowerWithoutWhitespacesString == reverceString {
             return "Строка палиндромом"
         }
-        else {
             return "Строка не палиндромом"
-        }
     }
 
 }
