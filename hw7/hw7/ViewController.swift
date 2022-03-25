@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         let fourthStudent = Student(name: "Полина", surname: "Хомко", numberRoom: 409, subjectGrade: ["Математика": 10, "Исит": 8])
         let fifthStudent = Student(name: "Настя", surname: "Супрун", subjectGrade: ["Математика": 10, "Исит": 8, "АИП": 4])
     
-        let school = School(studentArray: [firstStudent, secondStudent, thirdStudent, fourthStudent, fifthStudent ])
+        let school = School(studentArray: [firstStudent, secondStudent, thirdStudent, fourthStudent, fifthStudent])
 
         school.printInfoSchool()
     }
@@ -34,13 +34,13 @@ class ViewController: UIViewController {
 class School {
     var studentArray: [Student]
     
-    init(studentArray: [Student] ) {
+    init(studentArray: [Student]) {
         self.studentArray = studentArray
     }
     
     func printInfoSchool() {
         for student in studentArray {
-            print("Имя: \(student.name)\n" + "Фамилия: \(student.surname)\n" + "(\(student.numberRoom) кабинет)\n" + "\(student.subjectGrade)")
+            student.printInfo()
         }
      }
 }
@@ -51,12 +51,11 @@ class Student {
     let numberRoom: Int
     let subjectGrade: [String: Int]
     
-    init(name: String, surname: String, numberRoom: Int = 0, subjectGrade: [String: Int] = ["Оценки отсутствуют": 0]) {
+    init(name: String, surname: String, numberRoom: Int = 0, subjectGrade: [String: Int] = [:]) {
         self.name = name
         self.surname = surname
         self.numberRoom = numberRoom
         self.subjectGrade = subjectGrade
-        
     }
     
     func printInfo() {
