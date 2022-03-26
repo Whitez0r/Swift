@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		237F805927D1FC3B00992148 /* hw_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hw_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		237F805927D1FC3B00992148 /* hw3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hw3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		237F805C27D1FC3B00992148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		237F805E27D1FC3B00992148 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		237F806027D1FC3B00992148 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		237F805027D1FC3A00992148 = {
 			isa = PBXGroup;
 			children = (
-				237F805B27D1FC3B00992148 /* hw_3 */,
+				237F805B27D1FC3B00992148 /* hw3 */,
 				237F805A27D1FC3B00992148 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,12 +48,12 @@
 		237F805A27D1FC3B00992148 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				237F805927D1FC3B00992148 /* hw_3.app */,
+				237F805927D1FC3B00992148 /* hw3.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		237F805B27D1FC3B00992148 /* hw_3 */ = {
+		237F805B27D1FC3B00992148 /* hw3 */ = {
 			isa = PBXGroup;
 			children = (
 				237F805C27D1FC3B00992148 /* AppDelegate.swift */,
@@ -64,15 +64,15 @@
 				237F806727D1FC3F00992148 /* LaunchScreen.storyboard */,
 				237F806A27D1FC3F00992148 /* Info.plist */,
 			);
-			path = hw_3;
+			path = hw3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		237F805827D1FC3B00992148 /* hw_3 */ = {
+		237F805827D1FC3B00992148 /* hw3 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 237F806D27D1FC3F00992148 /* Build configuration list for PBXNativeTarget "hw_3" */;
+			buildConfigurationList = 237F806D27D1FC3F00992148 /* Build configuration list for PBXNativeTarget "hw3" */;
 			buildPhases = (
 				237F805527D1FC3B00992148 /* Sources */,
 				237F805627D1FC3B00992148 /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = hw_3;
+			name = hw3;
 			productName = hw_3;
-			productReference = 237F805927D1FC3B00992148 /* hw_3.app */;
+			productReference = 237F805927D1FC3B00992148 /* hw3.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 237F805427D1FC3A00992148 /* Build configuration list for PBXProject "hw_3" */;
+			buildConfigurationList = 237F805427D1FC3A00992148 /* Build configuration list for PBXProject "hw3" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				237F805827D1FC3B00992148 /* hw_3 */,
+				237F805827D1FC3B00992148 /* hw3 */,
 			);
 		};
 /* End PBXProject section */
@@ -341,7 +341,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		237F805427D1FC3A00992148 /* Build configuration list for PBXProject "hw_3" */ = {
+		237F805427D1FC3A00992148 /* Build configuration list for PBXProject "hw3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				237F806B27D1FC3F00992148 /* Debug */,
@@ -350,7 +350,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		237F806D27D1FC3F00992148 /* Build configuration list for PBXNativeTarget "hw_3" */ = {
+		237F806D27D1FC3F00992148 /* Build configuration list for PBXNativeTarget "hw3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				237F806E27D1FC3F00992148 /* Debug */,
